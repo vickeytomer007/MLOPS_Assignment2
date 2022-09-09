@@ -39,6 +39,7 @@ def task_wrapper(task_func: Callable) -> Callable:
             metric_dict, object_dict = task_func(cfg=cfg)
         except Exception as ex:
             log.exception("")  # save exception to `.log` file
+            print(ex)
             raise ex
         finally:
             path = Path(cfg.paths.output_dir, "exec_time.log")
