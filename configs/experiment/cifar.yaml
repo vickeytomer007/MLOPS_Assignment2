@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - override /datamodule: cifar10.yaml
+  - override /model: timm.yaml
+  - override /callbacks: default.yaml
+  - override /trainer: default.yaml
+
+
+tags: ["ficar10"]
+
+seed: 12345
+
+model:
+  net:
+    model_name: resnet18
+    pretrained: True
+    num_classes: 10
+
